@@ -49,21 +49,13 @@ void DrawChessBoard(sf::RenderWindow& window) {
     const int BoardSize = 8;
     float TileSize;
     float PosY;
-    float PosX; 
-    float SmallSize; //smaller window size
-
+    float PosX;
     //Define
     PosY = 0.f; //Supposed to start at y=0
 
     //Calculate TileSize
     sf::Vector2u windowSize = window.getSize();
-    //Which Side is smaller?
-    if (windowSize.y <= windowSize.x)
-        SmallSize = windowSize.y;
-    else
-        SmallSize = windowSize.x;
-
-    TileSize = SmallSize/ static_cast<float>(BoardSize);
+    TileSize = windowSize.y/ static_cast<float>(BoardSize);
 
     //shapes
     sf::RectangleShape square(sf::Vector2f({ TileSize, TileSize }));
